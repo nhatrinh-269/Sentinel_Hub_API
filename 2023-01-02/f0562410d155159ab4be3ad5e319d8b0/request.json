@@ -1,0 +1,66 @@
+{
+    "request": {
+        "headers": {
+            "accept": "image/tiff",
+            "content-type": "application/json"
+        },
+        "payload": {
+            "evalscript": "\n    //VERSION=3\n    function setup() {\n        return {\n            input: [{\n                bands: [\"B01\",\"B02\",\"B03\",\"B04\",\"B05\",\"B06\",\"B07\",\"B08\",\"B8A\",\"B09\",\"B10\",\"B11\",\"B12\"],\n                units: \"DN\"\n            }],\n            output: {\n                bands: 13,\n                sampleType: \"INT16\"\n            }\n        };\n    }\n\n    function evaluatePixel(sample) {\n        return [sample.B01,\n                sample.B02,\n                sample.B03,\n                sample.B04,\n                sample.B05,\n                sample.B06,\n                sample.B07,\n                sample.B08,\n                sample.B8A,\n                sample.B09,\n                sample.B10,\n                sample.B11,\n                sample.B12];\n    }\n",
+            "input": {
+                "bounds": {
+                    "bbox": [
+                        107.85459547384416,
+                        14.50270988907517,
+                        107.87605314634027,
+                        14.51162173005985
+                    ],
+                    "properties": {
+                        "crs": "http://www.opengis.net/def/crs/EPSG/0/4326"
+                    }
+                },
+                "data": [
+                    {
+                        "dataFilter": {
+                            "mosaickingOrder": "leastRecent",
+                            "timeRange": {
+                                "from": "2023-01-02T00:00:00Z",
+                                "to": "2023-01-02T23:59:59Z"
+                            }
+                        },
+                        "type": "sentinel-2-l1c"
+                    }
+                ]
+            },
+            "output": {
+                "height": 1016,
+                "responses": [
+                    {
+                        "format": {
+                            "type": "image/tiff"
+                        },
+                        "identifier": "default"
+                    }
+                ],
+                "width": 2302
+            }
+        },
+        "timestamp": "2024-03-12T08:02:47.157651",
+        "url": "https://services.sentinel-hub.com/api/v1/process"
+    },
+    "response": {
+        "elapsed": 8.732515,
+        "headers": {
+            "Connection": "keep-alive",
+            "Content-Type": "image/tiff",
+            "Date": "Tue, 12 Mar 2024 01:02:41 GMT",
+            "Transfer-Encoding": "chunked",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-headers": "origin,content-type,accept,accept-crs,authorization,cache-control",
+            "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH",
+            "access-control-allow-origin": "*",
+            "access-control-max-age": "3600",
+            "x-processingunits-spent": "38.66172423711396"
+        },
+        "status_code": 200
+    }
+}
