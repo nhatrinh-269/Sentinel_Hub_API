@@ -7,7 +7,7 @@ With the advancement of space satellite technology, accessing free satellite ima
 ### 1. `sentinel_hub_get_data.py`
 This script defines a function named `sentinel()` responsible for retrieving time-series multispectral satellite imagery data from the Sentinel Hub API. It requires parameters such as OAuth client ID, client secret, coordinates of the region of interest, evaluation script for data processing, start and end dates for the data retrieval period, and the path to save the retrieved image data in TIFF format.
 
-### 2. `decompress_tif_file.py`
+### 2. `Plot_bands.py`
 This script utilizes the `get_tiff_files()` function to search for the downloaded TIFF files and extract them. It then employs the `plt_tif_file()` function to display the bands of the multispectral image.
 
 ## Dependencies
